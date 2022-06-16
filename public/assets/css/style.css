@@ -1,0 +1,88 @@
+nav{
+	margin-bottom: 2em;
+}
+nav .navbar-brand img {
+	max-height: 2em;
+}
+h2 i {
+	margin-right: .3em;
+	color: gray;
+}
+
+h1:before {content: "";background: #E21F23;position: absolute;left: 0px;height: .1em;width: 3em;bottom: 0px;}
+
+h1 {
+	position: relative;
+	margin-bottom: 1rem;
+}
+
+h2 {
+	font-size: 1.5em;
+	margin-bottom: 1em;
+	margin-top: .5em;
+}
+nav.navbar ul.dropdown-menu li i {
+	color: gray;
+	margin-right: 0.5em;
+}
+
+nav.navbar ul.dropdown-menu li {
+	font-size: .9em;
+	line-height: 2em;
+}
+
+.dropdown-menu {
+	padding: 0px;
+}
+
+.dropdown-divider {
+	margin: 0px;
+}
+
+.toast .close {
+	position: absolute;
+	right: .5em;
+	top: .5em;
+	float: right;
+	font-weight: 700;
+	line-height: 1;
+	color: #000;
+	text-shadow: 0 1px 0 #fff;
+	opacity: .5;
+}
+i#toggleSearch {
+	background: rgba(255,255,255,0);
+	cursor: pointer;
+	transition: .3s ease-in;
+	display: inline-block;
+	text-align: center;
+	line-height: 2em;
+	width: 2.5em;
+	height: 2em;
+	border-radius: 2em;
+}
+
+i#toggleSearch:hover {
+	background: rgba(255,255,255,1);
+	box-shadow: 1px 1px 3px grey;
+}
+#buscadorForm.activo i#toggleSearch {
+	background: rgba(255,255,255,1);
+	box-shadow: 1px 1px 3px grey;
+}
+#buscadorForm #buscadorInput{
+	max-width: 0px;
+	padding-left: 0px;
+	padding-right: 0px;
+	border-color: rgba(0,0,0,0);
+	transition: .3s ease-in;
+}
+#buscadorForm.activo #buscadorInput{
+	max-width: 15em;
+	padding: .375rem .75rem;
+	border-color: #ced4da;
+}
+.floatAdd {
+	float: right;
+	border-radius: 3em;
+}

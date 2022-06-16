@@ -1,0 +1,50 @@
+body {
+	padding: 1em;
+	font-size: 12px;
+}
+
+h1 {
+	font-size: 36px;
+}
+
+h2 {
+	font-size: 24px;
+	margin-left: -1.5em;
+}
+
+p {
+	margin: .5em;
+}
+
+.suceso {
+	padding-left: 4em;
+	margin-top: 2em;
+	border-left: 1px solid black;
+	border-bottom: 1px solid black;
+}
+
+.ligas, .notas {
+	padding-left: 3em;
+	margin-left: 1em;
+	border-left: 1px solid black;
+	border-bottom: 1px solid black;
+	margin-bottom: 3em;
+}
+.nota {
+	margin-left: 2em;
+}
+h3 {
+	font-size: 16px;
+	margin-left: -1em;
+}
+
+h4 {
+	font-size: 1.2em;
+	margin-left: -2em;
+}
+
+.liga, .nota {
+	margin-bottom: 2em;
+	margin-left: 5em;
+	border-bottom: 1px solid #DDDDDD;
+}

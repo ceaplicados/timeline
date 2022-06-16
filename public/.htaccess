@@ -1,0 +1,21 @@
+# One year for image files
+<filesMatch ".(jpg|jpeg|png|gif|ico|webp)$">
+Header set Cache-Control "max-age=31536000, public"
+</filesMatch>
+# One month for css and js
+<filesMatch ".(css|js)$">
+Header set Cache-Control "max-age=2628000, public"
+</filesMatch>
+ErrorDocument 404 /404.php
+RewriteEngine On 
+RewriteCond %{HTTPS} off [OR]
+RewriteCond %{HTTP_HOST} !^www.segurosevivemejor.com$ [NC]
+# RewriteRule ^ https://www.segurosevivemejor.com%{REQUEST_URI} [L,NE,R]
+RewriteRule ^backend\/?$ backend.php [QSA,L]
+RewriteRule ^login\/?$ login.php [QSA,L]
+RewriteRule ^logout\/?$ logout.php [QSA,L]
+RewriteRule ^oauth/Google\/?$ oauth_Google.php [QSA,L]
+RewriteRule ^cambiar_org\/?$ choose_cliente.php [QSA,L]
+RewriteRule ^dashboard\/?$ index.php [QSA,L]
+RewriteRule ^timeline\/?([a-z_0-9A-Z]+)\/?$ timeline.php [QSA,L]
+RewriteRule ^print\/?([a-z_0-9A-Z]+)\/?$ print.php [QSA,L]

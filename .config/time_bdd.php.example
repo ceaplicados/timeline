@@ -1,0 +1,19 @@
+<?php
+class time_bdd {
+  private $_dsn='mysql:host=localhost;dbname=timeline';
+  private $_username='username';
+  private $_password='password';
+  private $_options=array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES utf8');
+  protected $_dbh;
+  public $_pruebas=true;
+
+  public function __construct(){
+    try{
+      $this->_dbh = new PDO($this->_dsn, $this->_username, $this->_password, $this->_options);
+    }catch (Exception $e){
+      var_dump($e);
+    };
+    date_default_timezone_set('America/Mexico_City');
+  }
+
+}

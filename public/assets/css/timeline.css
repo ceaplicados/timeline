@@ -1,0 +1,501 @@
+#interface {
+	width: 100vw;
+	height: 100vh;
+	position: absolute;
+	background: linear-gradient(
+231.7deg
+, #FFFFFF 10.9%, #E5E5E5 105.62%);
+	overflow: hidden;
+	display: block;
+}
+a#logoTimeline {
+	position: absolute;
+	top: .5em;
+	left: .5em;
+	background: white;
+	width: 4em;
+	height: 4em;
+	border-radius: 2em;
+	text-align: center;
+	cursor: pointer;
+	box-shadow: 1px 2px 2px gray;
+	transition: .3s ease-in-out;
+	display: block;
+}
+
+a#logoTimeline img {
+	height: 3em;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+a#logoTimeline:hover {
+	box-shadow: 1px 2px 5px grey;
+}
+
+h1 {
+	padding-left: 3em;
+	line-height: 2em;
+	padding-top: .3em;
+	cursor: pointer;
+	display: inline-block;
+	transition: .2s ease-in;
+}
+
+h1:hover {
+	color: #A3B0D1;
+}
+
+div#timeline {
+	position: absolute;
+	bottom: .5em;
+	width: 100vw;
+	height: 2em;
+	border-bottom: solid 3px #A3B0D1;
+	transition: 2s ease-in;
+	transform: translateX(100%);
+}
+
+#interface.loaded div#timeline {
+	transform: none;
+}
+
+div#fechaIni,div#fechaFin {
+	position: absolute;
+	bottom: .4em;
+	left: .5em;
+	font-size: .8em;
+	color: white;
+	background: #7ADE9C;
+	padding: .5em;
+	transition: .3s ease-in;
+	transform: none;
+}
+div#fechaFin {
+	left: unset;
+	right: .5em;
+}
+div#fechaIni.oculto, div#fechaFin.oculto {
+	transform: translateY(100%);
+	bottom: -1em;
+}
+
+#timeline .suceso {
+	background: #D9D8D3;
+	font-size: .9em;
+	display: block;
+	width: 15em;
+	padding: .5em;
+	position: absolute;
+	transition: .3s ease-in;
+	box-shadow: 1px 1px 2px gray;
+	padding-bottom: 1.3em;
+	cursor: pointer;
+	bottom: 3em;
+	transition: .3s ease-in, top 0s;
+}
+#timeline .suceso.oculto {
+	bottom: -8em;
+}
+#timeline .suceso:hover {
+	box-shadow: 1px 2px 4px gray;
+	background: #DBD9C3;
+	z-index: 18;
+}
+#timeline .suceso.open {
+	background: #EBDD5C;
+	z-index: 15;
+}
+#timeline .suceso .nombre {
+	display: block;
+	margin-bottom: .2em;
+	line-height: 1.2em;
+}
+
+#timeline .suceso .descripcion {
+	font-size: .8em;
+	line-height: 1.1em;
+	display: block;
+	width: 100%;
+	max-height: 3.3em;
+	overflow: auto;
+}
+#timeline .suceso.open .descripcion {
+	max-height: 13em;
+}
+#timeline .suceso .fecha, #timeline .suceso .fechaDetalle {
+	position: absolute;
+	right: .5em;
+	font-size: .7em;
+	bottom: .5em;
+	background: #D9D8D3;
+	transition: .3s ease-in;
+}
+#timeline .suceso:hover .fecha{
+	background: #DBD9C3;
+}
+#timeline .suceso .fechaDetalle {
+	background: #EBDD5C;
+	opacity: 0;
+}
+#timeline .suceso.open .fecha {
+	opacity: 0;
+}
+#timeline .suceso.open .fechaDetalle {
+	opacity: 1;
+}
+#timeline .suceso .linea {
+	position: absolute;
+	bottom: 0px;
+	transform: translateY(100%);
+	width: 2px;
+	height: 100vh;
+	background: #D9D8D3;
+	box-shadow: 1px 1px 2px grey;
+	left: 7em;
+	transition: .3s ease-in;
+}
+#timeline .suceso:hover .linea {
+	background: #DBD9C3;
+}
+#timeline .suceso.open .linea {
+	background: #EBDD5C;
+}
+#menuHerramientas{
+	position: absolute;
+	top: 1em;
+	right: .5em;
+	font-size: 2em;
+	transition: .2s ease-in;
+	width: 1.6em;
+	height: 1.6em;
+	border-radius: 5em;
+}
+#menuHerramientas:hover{
+	height: 6em;
+}
+i#cogMenuHerramientas {
+	position: absolute;
+	top: 0em;
+	right: 0em;
+	background: #505A76;
+	transition: .2s ease-in;
+	box-shadow: 1px 1px 3px grey;
+	color: white;
+	padding: .2em;
+	border-radius: 1em;
+	width: 1.5em;
+	text-align: center;
+	height: 1.5em;
+	line-height: 1.2em;
+	cursor: pointer;
+	z-index: 55;
+}
+i#addSuceso {
+	position: absolute;
+	top: 0em;
+	right: 0em;
+	background: #E35E5E;
+	transition: .2s ease-in;
+	box-shadow: 1px 1px 3px grey;
+	color: white;
+	padding: .2em;
+	border-radius: 1em;
+	width: 1.5em;
+	text-align: center;
+	height: 1.5em;
+	line-height: 1.2em;
+	cursor: pointer;
+	z-index: 50;
+}
+i#addSuceso:hover {
+	transform: scale(1.2);
+	box-shadow: 1px 2px 5px grey;
+}
+#menuHerramientas:hover i#addSuceso{
+	top: 2.2em;
+}
+i#goPrint {
+	position: absolute;
+	top: 0em;
+	right: 0em;
+	background: #EBDD5C;
+	transition: .2s ease-in;
+	box-shadow: 1px 1px 3px grey;
+	color: white;
+	padding: .2em;
+	border-radius: 1em;
+	width: 1.5em;
+	text-align: center;
+	height: 1.5em;
+	line-height: 1.2em;
+	cursor: pointer;
+	z-index: 50;
+}
+i#goPrint:hover {
+	transform: scale(1.2);
+	box-shadow: 1px 2px 5px grey;
+}
+#menuHerramientas:hover i#goPrint{
+	top: 4.5em;
+}
+
+
+
+#modalSuceso input#rangoFechaInicial, #modalSuceso input#rangoFechaFinal {
+	float: none;
+}
+#modalSuceso .rangoFechaIni{
+	display: none;
+}
+
+div#detalleSuceso {
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100vw;
+	height: 100vh;
+	transition: .3s ease-in;
+	transform: translateX(100%);
+	opacity: 0;
+	z-index: 60;
+}
+div#detalleSuceso .sombra{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 200px;
+	height: 100vh;
+	background: rgba(0,0,0,.2);
+}
+
+div#detalleSuceso .contenidos {
+	position: absolute;
+	width: calc(100vw - 200px);
+	height: 100vh;
+	left: 200px;
+	background: white;
+	box-shadow: -1px 2px 4px gray;
+	padding: 1em;
+	overflow: auto;
+}
+
+div#detalleSuceso.shown {
+	opacity: 1;
+	transform: none;
+}
+
+div#detalleSuceso i.fa-times-circle{
+	position: absolute;
+	top: 1em;
+	right: 1em;
+	cursor: pointer;
+	color: gray;
+	transition: .3s ease-in;
+}
+div#detalleSuceso i.fa-times-circle:hover{
+	color: black;
+}
+#detalleSuceso ul.tabSelector {
+	margin: 0px;
+	padding: 0px;
+	list-style: none;
+	display: block;
+	border-bottom: solid 1px #CCCCCC;
+	margin-bottom: .5em;
+}
+
+#detalleSuceso ul.tabSelector li {
+	display: inline-block;
+	padding: .3em;
+	border: solid 1px #CCCCCC;
+	padding-left: 1em;
+	padding-right: 1em;
+	cursor: pointer;
+	color: gray;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	border-bottom: none;
+	transition: .2s ease-in;
+}
+#detalleSuceso ul.tabSelector li b{
+	font-size: .7em;
+}
+#detalleSuceso ul.tabSelector li:hover {
+	color: #666666;
+	border-color: #666666;
+}
+
+div#imagenLiga img {
+	max-width: 100%;
+}
+#detalleSuceso.ligasSuceso #ligasSuceso{
+	display: block;
+}
+#detalleSuceso.ligasSuceso #notasSuceso{
+	display: none;
+}
+#detalleSuceso.ligasSuceso #googleDrive{
+	display: none;
+}
+#detalleSuceso.ligasSuceso ul.tabSelector li[data-target='ligasSuceso']{
+	color: #0d6efd;
+	border-color: #0d6efd;
+	box-shadow: 1px 0px 2px grey;
+}
+#detalleSuceso.notasSuceso #ligasSuceso{
+	display: none;
+}
+#detalleSuceso.notasSuceso #notasSuceso{
+	display: block;
+}
+#detalleSuceso.notasSuceso #googleDrive{
+	display: none;
+}
+#detalleSuceso.notasSuceso ul.tabSelector li[data-target='notasSuceso']{
+	color: #0d6efd;
+	border-color: #0d6efd;
+	box-shadow: 1px 0px 2px grey;
+}
+
+#detalleSuceso.googleDrive #ligasSuceso{
+	display: none;
+}
+#detalleSuceso.googleDrive #notasSuceso{
+	display: none;
+}
+#detalleSuceso.googleDrive #googleDrive{
+	display: block;
+	padding-top: 1em;
+}
+#detalleSuceso.googleDrive ul.tabSelector li[data-target='googleDrive']{
+	color: #0d6efd;
+	border-color: #0d6efd;
+	box-shadow: 1px 0px 2px grey;
+}
+
+
+div#detalleSuceso #ligasSuceso i#addLiga {
+	font-size: 2em;
+	background: #E35E5E;
+	transition: .2s ease-in;
+	box-shadow: 1px 1px 3px grey;
+	color: white;
+	padding: .2em;
+	border-radius: 1em;
+	width: 1.5em;
+	text-align: center;
+	height: 1.5em;
+	line-height: 1.2em;
+	cursor: pointer;
+	font-size: .8em;
+	margin-left: .5em;
+}
+
+div#detalleSuceso #ligasSuceso i#addLiga:hover {
+	transform: scale(1.2);
+	box-shadow: 1px 2px 5px grey;
+}
+#detalleSuceso #ligasSuceso ul.ligas {
+	padding: 0px;
+	margin: 0px;
+	list-style: none;
+}
+
+#detalleSuceso #ligasSuceso ul.ligas li {
+	display: inline-block;
+	width: 16em;
+	font-size: .9em;
+	border: solid 1px #CCCCCC;
+	height: 24em;
+	padding: .5em;
+	margin: .5em;
+	position: relative;
+	padding-top: 11em;
+	line-height: 1.1em;
+}
+
+#detalleSuceso #ligasSuceso ul.ligas li .imagen {
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 10em;
+	overflow: hidden;
+}
+
+#detalleSuceso #ligasSuceso ul.ligas li .imagen img{
+	width: 100%;
+}
+#detalleSuceso #ligasSuceso ul.ligas li .titulo {
+	margin-bottom: .4em;
+	display: block;
+	height: 3.3em;
+	overflow: auto;
+}
+#detalleSuceso #ligasSuceso ul.ligas li .descripcion {
+	font-size: .8em;
+	color: gray;
+	display: block;
+	height: 10em;
+	overflow: auto;
+}
+#detalleSuceso #ligasSuceso ul.ligas li i.fas.fa-edit {
+	position: absolute;
+	bottom: .5em;
+	right: 2em;
+	cursor: pointer;
+	color: teal;
+}
+#detalleSuceso #ligasSuceso ul.ligas li a {
+	position: absolute;
+	bottom: .5em;
+	right: .5em;
+}
+
+
+
+div#detalleSuceso #notasSuceso i#addNota {
+	font-size: 2em;
+	background: #E35E5E;
+	transition: .2s ease-in;
+	box-shadow: 1px 1px 3px grey;
+	color: white;
+	padding: .2em;
+	border-radius: 1em;
+	width: 1.5em;
+	text-align: center;
+	height: 1.5em;
+	line-height: 1.2em;
+	cursor: pointer;
+	font-size: .8em;
+	margin-left: .5em;
+}
+
+div#detalleSuceso #notasSuceso i#addNota:hover {
+	transform: scale(1.2);
+	box-shadow: 1px 2px 5px grey;
+}
+div#detalleSuceso #notasSuceso .listaNotas {
+	position: relative;
+}
+div#detalleSuceso #notasSuceso .nota {
+	background: #EBDD5C;
+	width: 13em;
+	height: 12em;
+	padding: 1em;
+	box-shadow: 3px 1px 4px grey;
+	overflow: auto;
+	color: #333333;
+	position: absolute;
+	font-size: .8em;
+	cursor: grab;
+}
+div#detalleSuceso #notasSuceso .nota .content {
+	width: 100%;
+	height: calc(100% - 1em);
+	margin-top: 1em;
+	cursor: text;
+}
